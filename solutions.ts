@@ -7,3 +7,10 @@ function formatString(input: string, toUpper?: boolean): string {
 
   return input;
 }
+
+function filterByRating(
+  items: { title: string; rating: number }[]
+): { title: string; rating: number }[] {
+  const filteredResult = items.filter((res) => res.rating >= 4);
+  return filteredResult;
+}
