@@ -56,3 +56,21 @@ function processValue(value: string | number): number {
 
   return value;
 }
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  let maxObject = products[0];
+  let maxPrice = products[0].price;
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].price > maxPrice) {
+      maxObject = products[i];
+      maxPrice = products[i].price;
+    }
+  }
+  return maxObject;
+}
