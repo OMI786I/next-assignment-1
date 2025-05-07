@@ -8,7 +8,6 @@ function formatString(input: string, toUpper?: boolean): string {
   return input;
 }
 
-
 function filterByRating(
   items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
@@ -16,13 +15,11 @@ function filterByRating(
   return filteredResult;
 }
 
-
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   const result = arrays.flat();
 
   return result;
 }
-
 
 class Vehicle {
   private make: string;
@@ -48,4 +45,14 @@ class Car extends Vehicle {
   getModel() {
     console.log(`Model: ${this.model}`);
   }
+}
+
+function processValue(value: string | number): number {
+  if (typeof value === "string") {
+    return value.replace(/\s+/g, "").length;
+  } else if (typeof value === "number") {
+    return value * 2;
+  }
+
+  return value;
 }
